@@ -38,7 +38,7 @@ export default class App extends Component {
     axios
       .delete(this.URL + "/" + event.target.value)
       .then(res => {
-        this.fetchEmployees()
+        this.getEmployees()
       })
       .catch(err => alert(err))
   }
@@ -49,7 +49,7 @@ export default class App extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
-    this.fetchEmployees()
+    this.getEmployees()
   }
 
   render() {
