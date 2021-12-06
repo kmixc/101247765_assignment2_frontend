@@ -23,8 +23,8 @@ export default function EmployeeRow(props) {
         return (
             <Card>
                 <Card.Title>{props.employee._id}</Card.Title>
-                <Card.Text><input className="form-control" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></Card.Text>
-                <Card.Text><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></Card.Text>
+                <Card.Text><input className="form-control p-4 w-50" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></Card.Text>
+                <Card.Text><input className="form-control p-4 w-50" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></Card.Text>
                 <Card.Footer>
                     <button className="btn btn-success" value={props.employee._id} onClick={sendUpdate}>Update</button>
                 </Card.Footer>
@@ -32,10 +32,10 @@ export default function EmployeeRow(props) {
         )
     } else {
         return (
-            <Card className="m-2">
-                <Card.Title>{props.employee._id}</Card.Title>
-                <Card.Text>{firstName}</Card.Text>
-                <Card.Text>{lastName}</Card.Text>
+            <Card className="m-5 p-2">
+                <Card.Title>ID: {props.employee._id}</Card.Title>
+                <Card.Text>First Name: {firstName}</Card.Text>
+                <Card.Text>Last Name: {lastName}</Card.Text>
                 <Card.Footer>
                     <ViewEmployeeModal employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
                     <button className="btn btn-primary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
