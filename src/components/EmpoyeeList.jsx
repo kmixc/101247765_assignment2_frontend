@@ -22,7 +22,7 @@ export default function EmployeeList(props) {
                 </thead>
                 <tbody>
                     {
-                        props.employeeObj.map(
+                        props.employeeData.map(
                             employee =>
                                 <EmployeeTd
                                     employee={employee}
