@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import EmployeeRow from './EmployeeRow.jsx'
+import EmployeeTd from './EmployeeTd.jsx'
 import Button from 'react-bootstrap/Button'
 
-import CreateEmployeeModal from './CreateEmployeeModal.jsx'
+import CreateEmployeeModal from './AddEmployee.jsx'
 
 export default function EmployeeList(props) {
     const [modalShow, setModalShow] = useState(false);
@@ -11,7 +11,7 @@ export default function EmployeeList(props) {
         <div className="text-center">
             <h2 className="m-3">Employee MERN Assignment 2</h2>
             <CreateEmployeeModal onSubmit={props.newEmployeeHandler} show={modalShow} onHide={() => setModalShow(false)} />
-            <table className="table">
+            <table className="table table-dark">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -23,12 +23,13 @@ export default function EmployeeList(props) {
                 <tbody>
                     {
                         props.employeeObj.map(
-                            employee => <EmployeeRow
-                                employee={employee}
-                                key={employee._id}
-                                view={props.view}
-                                update={props.update}
-                                delete={props.delete} />
+                            employee =>
+                                <EmployeeTd
+                                    employee={employee}
+                                    key={employee._id}
+                                    view={props.view}
+                                    update={props.update}
+                                    delete={props.delete} />
                         )
                     }
                 </tbody>
