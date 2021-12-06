@@ -26,9 +26,9 @@ export default function EmployeeList(props) {
                             employee => <EmployeeRow
                                 employee={employee}
                                 key={employee._id}
-                                viewHandler={props.viewHandler}
-                                updateHandler={props.updateHandler}
-                                deleteHandler={props.deleteHandler} />
+                                view={props.view}
+                                update={props.update}
+                                delete={props.delete} />
                         )
                     }
                 </tbody>

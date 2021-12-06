@@ -66,10 +66,10 @@ export default class App extends Component {
       <div>
         <Navbar />
         <Employee employeeObj={this.state.employeeObj}
-          viewHandler={this.view}
-          updateHandler={this.update}
-          deleteHandler={this.delete}
-          newEmployeeHandler={this.newEmployee} />
+          view={this.view}
+          update={this.update}
+          delete={this.delete}
+          newEmployee={this.newEmployee} />
       </div>
     );
   }
