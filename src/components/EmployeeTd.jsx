@@ -32,14 +32,14 @@ export default function EmployeeRow(props) {
         )
     } else {
         return (
-            <Card className="m-5 p-2">
-                <Card.Title>ID: {props.employee._id}</Card.Title>
+            <Card className="m-5">
+                <Card.Title className="pt-2">ID: {props.employee._id}</Card.Title>
                 <Card.Text>First Name: {firstName}</Card.Text>
                 <Card.Text>Last Name: {lastName}</Card.Text>
                 <Card.Footer>
                     <ViewEmployeeModal employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
-                    <button className="btn btn-primary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
-                    <button className="btn btn-success m-1" value={props.employee._id} onClick={updateHandler}>Update</button>
+                    <button className="btn btn-secondary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
+                    <button className="btn btn-info m-1" value={props.employee._id} onClick={updateHandler}>Update</button>
                     <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.deleteHandler}>Delete</button>
                 </Card.Footer>
             </Card>

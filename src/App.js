@@ -26,24 +26,18 @@ export default class App extends Component {
     this.fetchEmployees()
   }
 
-  handleClickView(event) {
-    alert("Viewing " + event.target.value)
-  }
-
   handleClickUpdate = (newEmployeeObj) => {
     axios
       .put(this.URL + "/" + newEmployeeObj._id, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
-    alert("Employee Updated!")
   }
 
   handleClickDelete = (event) => {
     axios
       .delete(this.URL + "/" + event.target.value)
       .then(res => {
-        alert("Employee Deleted Successfully")
         this.fetchEmployees()
       })
       .catch(err => alert(err))
@@ -54,8 +48,6 @@ export default class App extends Component {
       .post(this.URL, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
-
-    alert("Employee " + newEmployeeObj.firstName + " created!")
 
     this.fetchEmployees()
   }
