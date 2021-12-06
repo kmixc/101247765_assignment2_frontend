@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import EmployeeTd from './EmployeeTd.jsx'
-import { Button, Card, Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 
 import CreateEmployeeModal from './AddEmployee.jsx'
 
