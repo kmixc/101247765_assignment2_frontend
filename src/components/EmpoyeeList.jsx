@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import EmployeeTd from './EmployeeTd.jsx'
+import EmployeeTd from './EmployeeCard.jsx'
 import { Button, Container } from 'react-bootstrap'
 
 import CreateEmployeeModal from './AddEmployee.jsx'
@@ -13,7 +13,7 @@ export default function EmployeeList(props) {
             <CreateEmployeeModal onSubmit={props.newEmployeeHandler} show={modalShow} onHide={() => setModalShow(false)} />
             <Container className="text-dark">
                 {
-                    props.employeeData.map(
+                    props.employeeOBJ.map(
                         employee => <EmployeeTd
                             employee={employee}
                             key={employee._id}

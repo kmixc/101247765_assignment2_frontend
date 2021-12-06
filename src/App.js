@@ -7,7 +7,7 @@ export default class App extends Component {
     super()
     this.URL = "https://101247765-assignment2-backend.vercel.app/api/v1/employees"
     this.state = {
-      employeeData: []
+      employeeOBJ: []
     }
 
   }
@@ -16,7 +16,7 @@ export default class App extends Component {
     fetch(this.URL).then(
       res => res.json()
     ).then(
-      employeeData => this.setState({ employeeData })
+      employeeOBJ => this.setState({ employeeOBJ })
     ).catch((err) =>
       alert("An error has occurred: " + err.toString())
     )
@@ -55,7 +55,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Employee employeeData={this.state.employeeData}
+        <Employee employeeOBJ={this.state.employeeOBJ}
           viewHandler={this.handleClickView}
           updateHandler={this.handleClickUpdate}
           deleteHandler={this.handleClickDelete}
