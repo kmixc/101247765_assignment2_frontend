@@ -22,17 +22,17 @@ export default function EmployeeRow(props) {
     if (isEditing) {
         return (
             <Card>
-                <td>{props.employee._id}</td>
-                <td><input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
-                <td><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
-                <td>
+                <Card.Title>{props.employee._id}</Card.Title>
+                <Card.Text><input className="form-control" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></Card.Text>
+                <Card.Text><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></Card.Text>
+                <Card.Footer>
                     <button className="btn btn-success" value={props.employee._id} onClick={sendUpdate}>Update</button>
-                </td>
+                </Card.Footer>
             </Card>
         )
     } else {
         return (
-            <Card>
+            <Card className="m-2">
                 <Card.Title>{props.employee._id}</Card.Title>
                 <Card.Text>{firstName}</Card.Text>
                 <Card.Text>{lastName}</Card.Text>

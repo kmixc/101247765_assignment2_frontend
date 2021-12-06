@@ -12,14 +12,12 @@ export default function EmployeeList(props) {
             <h2 className="m-3">Employee MERN Assignment 2</h2>
             <CreateEmployeeModal onSubmit={props.newEmployeeHandler} show={modalShow} onHide={() => setModalShow(false)} />
             <Container className="text-dark">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Options</th>
-                    </tr>
-                </thead>
+                <div className="d-flex justify-content-center">
+                    <p>ID</p>
+                    <p>First Name</p>
+                    <p>Last Name</p>
+                    <p>Options</p>
+                </div>
                 {
                     props.employeeData.map(
                         employee => <EmployeeTd
