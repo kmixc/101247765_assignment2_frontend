@@ -67,7 +67,7 @@ export default class App extends Component {
           view={this.view}
           update={this.update}
           delete={this.delete}
-          newEmployee={this.newEmployee} />
+          newEmployee={this.newEmployeeObj} />
       </div>
     );
   }

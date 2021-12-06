@@ -15,7 +15,7 @@ export default function EmployeeRow(props) {
 
     const updated = () => {
         setIsEditing(false)
-        props.updateHandler({ _id: props.employee._id, firstName, lastName })
+        props.updated({ _id: props.employee._id, firstName, lastName })
     }
 
     if (isEditing) {
