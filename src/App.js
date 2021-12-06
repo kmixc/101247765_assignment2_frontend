@@ -63,8 +63,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Navbar title="Employee Management App" />
-        <EmployeeList employeeData={this.state.employeeData}
+        <Employee employeeData={this.state.employeeData}
           viewHandler={this.handleClickView}
           updateHandler={this.handleClickUpdate}
           deleteHandler={this.handleClickDelete}
