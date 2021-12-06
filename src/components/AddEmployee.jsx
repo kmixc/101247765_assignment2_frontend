@@ -27,8 +27,8 @@ export default function CreateEmployeeModal(props) {
                     <Form.Label>Last Name:</Form.Label>
                     <Form.Control onChange={(e) => setLastName(e.target.value)} name="lastName" type="text" placeholder="lastname" />
                 </Form.Group>
-                <Button className="m-1" variant="primary" type="submit" onClick={() => props.onSubmit({ firstName, lastName })}>Add Employee</Button>
-                <Button className="m-1" onClick={props.onHide}>Close</Button>
+                <Button className="m-1 btn-success" type="submit" onClick={() => props.onSubmit({ firstName, lastName })}>Add Employee</Button>
+                <Button className="m-1 btn-danger" onClick={props.onHide}>Close</Button>
             </Modal.Body>
         </Modal>
     )

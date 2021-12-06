@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
-import ViewEmployeeModal from './ViewEmployeeModal'
+import ViewEmployee from './ViewEmployee'
 
 export default function EmployeeRow(props) {
     const [isEditing, setIsEditing] = useState(false)
@@ -23,8 +23,8 @@ export default function EmployeeRow(props) {
         return (
             <Card>
                 <Card.Title className="pt-2">ID: {props.employee._id}</Card.Title>
-                <Card.Text><input className="form-control p-4 mx-3" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></Card.Text>
-                <Card.Text><input className="form-control p-4 mx-3" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></Card.Text>
+                <Card.Text><input className="form-control mx-3" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></Card.Text>
+                <Card.Text><input className="form-control mx-3" type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></Card.Text>
                 <Card.Footer>
                     <button className="btn btn-success" value={props.employee._id} onClick={sendUpdate}>Update</button>
                 </Card.Footer>
@@ -37,7 +37,7 @@ export default function EmployeeRow(props) {
                 <Card.Text>First Name: {firstName}</Card.Text>
                 <Card.Text>Last Name: {lastName}</Card.Text>
                 <Card.Footer>
-                    <ViewEmployeeModal employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
+                    <ViewEmployee employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
                     <button className="btn btn-secondary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
                     <button className="btn btn-info m-1" value={props.employee._id} onClick={updateHandler}>Update</button>
                     <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.deleteHandler}>Delete</button>

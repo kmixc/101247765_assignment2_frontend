@@ -6,10 +6,7 @@ export default function ViewEmployeeModal(props) {
 
     return (
         <Modal
-            {...props}
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
+            {...props}>
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
                     View
@@ -21,7 +18,7 @@ export default function ViewEmployeeModal(props) {
                 Last Name: {props.employee.lastName}
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button className="btn btn-danger" onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     )
