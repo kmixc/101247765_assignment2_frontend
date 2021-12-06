@@ -7,68 +7,69 @@ export default class App extends Component {
     super()
     this.URL = "https://101247765-assignment2-backend.vercel.app/api/v1/employees"
     this.state = {
-      employeeObj: []
+      employeeData: []
     }
 
   }
 
-  getEmployees = () => {
-    fetch(this.URL).then(
+  fetchEmployees = () => {
+    fetch(this.BACKEND_URL).then(
       res => res.json()
     ).then(
-      employeeObj => this.setState({ employeeObj })
+      employeeData => this.setState({ employeeData })
     ).catch((err) =>
       alert("An error has occurred: " + err.toString())
     )
   }
 
   componentDidMount() {
-    this.getEmployees()
+    this.fetchEmployees()
   }
 
-  view(event) {
+  handleClickView(event) {
     alert("Viewing " + event.target.value)
   }
 
-  update = (newEmployeeObj) => {
+  handleClickUpdate = (newEmployeeObj) => {
     axios
-      .put(this.URL + "/" + newEmployeeObj._id, newEmployeeObj)
+      .put(this.BACKEND_URL + "/" + newEmployeeObj._id, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
     alert("Employee Updated!")
   }
 
-  delete = (event) => {
+  handleClickDelete = (event) => {
     axios
-      .delete(this.URL + "/" + event.target.value)
+      .delete(this.BACKEND_URL + "/" + event.target.value)
       .then(res => {
         alert("Employee Deleted Successfully")
-        this.getEmployees()
+        this.fetchEmployees()
       })
       .catch(err => alert(err))
   }
 
-  newEmployee = (newEmployeeObj) => {
+  handleCreateNewEmployee = (newEmployeeObj) => {
     axios
-      .post(this.URL, newEmployeeObj)
+      .post(this.BACKEND_URL, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
     alert("Employee " + newEmployeeObj.firstName + " created!")
 
-    this.getEmployees()
+    this.fetchEmployees()
   }
 
   render() {
     return (
       <div>
-        <Employee employeeObj={this.state.employeeObj}
-          view={this.view}
-          update={this.update}
-          delete={this.delete}
-          newEmployee={this.newEmployeeObj} />
+        <Navbar title="Employee Management App" />
+        <EmployeeList employeeData={this.state.employeeData}
+          viewHandler={this.handleClickView}
+          updateHandler={this.handleClickUpdate}
+          deleteHandler={this.handleClickDelete}
+          newEmployeeHandler={this.handleCreateNewEmployee} />
       </div>
-    );
+    )
   }
 }
