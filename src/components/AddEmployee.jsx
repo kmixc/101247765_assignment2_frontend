@@ -13,7 +13,7 @@ export default function CreateEmployeeModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Title className="text-center">
+            <Modal.Title className="text-center p-3">
                 Add
             </Modal.Title>
             <Modal.Body>
