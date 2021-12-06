@@ -13,7 +13,7 @@ export default class App extends Component {
   }
 
   fetchEmployees = () => {
-    fetch(this.BACKEND_URL).then(
+    fetch(this.URL).then(
       res => res.json()
     ).then(
       employeeData => this.setState({ employeeData })
@@ -32,7 +32,7 @@ export default class App extends Component {
 
   handleClickUpdate = (newEmployeeObj) => {
     axios
-      .put(this.BACKEND_URL + "/" + newEmployeeObj._id, newEmployeeObj)
+      .put(this.URL + "/" + newEmployeeObj._id, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
@@ -41,7 +41,7 @@ export default class App extends Component {
 
   handleClickDelete = (event) => {
     axios
-      .delete(this.BACKEND_URL + "/" + event.target.value)
+      .delete(this.URL + "/" + event.target.value)
       .then(res => {
         alert("Employee Deleted Successfully")
         this.fetchEmployees()
@@ -51,7 +51,7 @@ export default class App extends Component {
 
   handleCreateNewEmployee = (newEmployeeObj) => {
     axios
-      .post(this.BACKEND_URL, newEmployeeObj)
+      .post(this.URL, newEmployeeObj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
