@@ -22,8 +22,8 @@ export default function EmployeeRow(props) {
         return (
             <tr>
                 <td>{props.employee._id}</td>
-                <td><input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
-                <td><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
+                <td><input type="text" className="form-control" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
+                <td><input type="text" className="form-control" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
                 <td>
                     <button className="btn btn-success" value={props.employee._id} onClick={updated}>Update</button>
                 </td>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Navbar from './components/NavbarAssign.jsx'
 import Employee from './components/EmpoyeeList'
 
 export default class App extends Component {
@@ -37,12 +36,14 @@ export default class App extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
+    alert("Employee Updated!")
   }
 
   delete = (event) => {
     axios
       .delete(this.URL + "/" + event.target.value)
       .then(res => {
+        alert("Employee Deleted Successfully")
         this.getEmployees()
       })
       .catch(err => alert(err))
@@ -54,13 +55,14 @@ export default class App extends Component {
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
+    alert("Employee " + newEmployeeObj.firstName + " created!")
+
     this.getEmployees()
   }
 
   render() {
     return (
       <div>
-        <Navbar />
         <Employee employeeObj={this.state.employeeObj}
           view={this.view}
           update={this.update}

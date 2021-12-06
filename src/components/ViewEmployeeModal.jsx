@@ -16,9 +16,9 @@ export default function ViewEmployeeModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                ID: <b>{props.employee._id}</b><br />
-                First Name: <b>{props.employee.firstName}</b><br />
-                Last Name: <b>{props.employee.lastName}</b>
+                ID: {props.employee._id}<br />
+                First Name: {props.employee.firstName}<br />
+                Last Name: {props.employee.lastName}
             </Modal.Body>
             <Modal.Footer>
                 <Button onClick={props.onHide}>Close</Button>
