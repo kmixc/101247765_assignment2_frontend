@@ -1,29 +1,28 @@
 import React from 'react'
-import Modal from 'react-bootstrap/Modal'
+import { Container, Card } from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 export default function ViewEmployeeModal(props) {
 
     return (
-        <Modal
+        <Card
             {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
+            aria-labelledby="contained-Card-title-vcenter"
             centered
         >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
+            <Card.Header>
+                <Card.Title id="contained-Card-title-vcenter">
                     View Employee
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+                </Card.Title>
+            </Card.Header>
+            <Card.Body>
                 ID: <b>{props.employee._id}</b><br />
                 First Name: <b>{props.employee.firstName}</b><br />
                 Last Name: <b>{props.employee.lastName}</b>
-            </Modal.Body>
-            <Modal.Footer>
+            </Card.Body>
+            <Card.Footer>
                 <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-        </Modal>
+            </Card.Footer>
+        </Card>
     )
 }

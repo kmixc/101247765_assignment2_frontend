@@ -9,11 +9,11 @@ export default function EmployeeRow(props) {
     const [modalShow, setModalShow] = React.useState(false);
 
 
-    const updateHandler = () => {
+    const update = () => {
         setIsEditing(true)
     }
 
-    const sendUpdate = () => {
+    const updated = () => {
         setIsEditing(false)
         props.updateHandler({ _id: props.employee._id, firstName, lastName })
     }
@@ -25,7 +25,7 @@ export default function EmployeeRow(props) {
                 <td><input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
                 <td><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
                 <td>
-                    <button className="btn btn-success" value={props.employee._id} onClick={sendUpdate}>Update</button>
+                    <button className="btn btn-success" value={props.employee._id} onClick={updated}>Update</button>
                 </td>
             </tr>
         )
@@ -38,8 +38,8 @@ export default function EmployeeRow(props) {
                 <td>
                     <ViewEmployeeModal employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
                     <button className="btn btn-primary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
-                    <button className="btn btn-success m-1" value={props.employee._id} onClick={updateHandler}>Update</button>
-                    <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.deleteHandler}>Delete</button>
+                    <button className="btn btn-success m-1" value={props.employee._id} onClick={update}>Update</button>
+                    <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.delete}>Delete</button>
                 </td>
             </tr>
         )
