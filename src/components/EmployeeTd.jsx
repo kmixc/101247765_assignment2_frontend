@@ -9,23 +9,23 @@ export default function EmployeeRow(props) {
     const [modalShow, setModalShow] = React.useState(false);
 
 
-    const update = () => {
+    const updateHandler = () => {
         setIsEditing(true)
     }
 
-    const updated = () => {
+    const sendUpdate = () => {
         setIsEditing(false)
-        props.update({ _id: props.employee._id, firstName, lastName })
+        props.updateHandler({ _id: props.employee._id, firstName, lastName })
     }
 
     if (isEditing) {
         return (
             <tr>
                 <td>{props.employee._id}</td>
-                <td><input type="text" className="form-control" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
-                <td><input type="text" className="form-control" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
+                <td><input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} /></td>
+                <td><input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} /></td>
                 <td>
-                    <button className="btn btn-success" value={props.employee._id} onClick={updated}>Update</button>
+                    <button className="btn btn-success" value={props.employee._id} onClick={sendUpdate}>Update</button>
                 </td>
             </tr>
         )
@@ -38,8 +38,8 @@ export default function EmployeeRow(props) {
                 <td>
                     <ViewEmployeeModal employee={props.employee} show={modalShow} onHide={() => setModalShow(false)} />
                     <button className="btn btn-primary m-1" value={props.employee._id} onClick={() => setModalShow(true)}>View</button>
-                    <button className="btn btn-success m-1" value={props.employee._id} onClick={update}>Update</button>
-                    <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.delete}>Delete</button>
+                    <button className="btn btn-success m-1" value={props.employee._id} onClick={updateHandler}>Update</button>
+                    <button className="btn btn-danger m-1" value={props.employee._id} onClick={props.deleteHandler}>Delete</button>
                 </td>
             </tr>
         )

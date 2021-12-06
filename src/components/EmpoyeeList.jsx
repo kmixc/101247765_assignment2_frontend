@@ -23,13 +23,12 @@ export default function EmployeeList(props) {
                 <tbody>
                     {
                         props.employeeData.map(
-                            employee =>
-                                <EmployeeTd
-                                    employee={employee}
-                                    key={employee._id}
-                                    view={props.view}
-                                    update={props.update}
-                                    delete={props.delete} />
+                            employee => <EmployeeTd
+                                employee={employee}
+                                key={employee._id}
+                                viewHandler={props.viewHandler}
+                                updateHandler={props.updateHandler}
+                                deleteHandler={props.deleteHandler} />
                         )
                     }
                 </tbody>
