@@ -23,7 +23,7 @@ export default function EmployeeList(props) {
                     )
                 }
             </Container>
-            <Button variant="primary" className="m-3" onClick={() => setModalShow(true)}>Add Employee</Button>
+            <Button className="m-3 btn btn-success" onClick={() => setModalShow(true)}>Add Employee</Button>
         </div>
     )
 }
