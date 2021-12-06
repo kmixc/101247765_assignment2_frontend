@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Employee from './components/EmpoyeeList'
+import Employees from './components/Empoyees'
 
 export default class App extends Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class App extends Component {
 
   }
 
-  fetchEmployees = () => {
+  getEmployees = () => {
     fetch(this.URL).then(
       res => res.json()
     ).then(
@@ -23,10 +23,10 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchEmployees()
+    this.getEmployees()
   }
 
-  handleClickUpdate = (newEmployeeObj) => {
+  update = (newEmployeeObj) => {
     axios
       .put(this.URL + "/" + newEmployeeObj._id, newEmployeeObj)
       .then(res => console.log(res))
@@ -34,7 +34,7 @@ export default class App extends Component {
 
   }
 
-  handleClickDelete = (event) => {
+  delete = (event) => {
     axios
       .delete(this.URL + "/" + event.target.value)
       .then(res => {
@@ -43,7 +43,7 @@ export default class App extends Component {
       .catch(err => alert(err))
   }
 
-  handleCreateNewEmployee = (newEmployeeObj) => {
+  newEmployee = (newEmployeeObj) => {
     axios
       .post(this.URL, newEmployeeObj)
       .then(res => console.log(res))
@@ -55,11 +55,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Employee employeeOBJ={this.state.employeeOBJ}
+        <Employees employeeOBJ={this.state.employeeOBJ}
           viewHandler={this.handleClickView}
-          updateHandler={this.handleClickUpdate}
-          deleteHandler={this.handleClickDelete}
-          newEmployeeHandler={this.handleCreateNewEmployee} />
+          updateHandler={this.update}
+          deleteHandler={this.delete}
+          newEmployeeHandler={this.newEmployee} />
       </div>
     )
   }
