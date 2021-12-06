@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import EmployeeTd from './EmployeeTd.jsx'
-import Button from 'react-bootstrap/Button'
+import { Button, Card } from 'react-bootstrap'
 
 import CreateEmployeeModal from './AddEmployee.jsx'
 
@@ -11,16 +11,16 @@ export default function EmployeeList(props) {
         <div className="text-center">
             <h2 className="m-3">Employee MERN Assignment 2</h2>
             <CreateEmployeeModal onSubmit={props.newEmployeeHandler} show={modalShow} onHide={() => setModalShow(false)} />
-            <table className="table table-dark">
-                <thead>
+            <Card className="table table-dark">
+                <Card.Header>
                     <tr>
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Options</th>
                     </tr>
-                </thead>
-                <tbody>
+                </Card.Header>
+                <Card.Body>
                     {
                         props.employeeData.map(
                             employee => <EmployeeTd
@@ -31,8 +31,8 @@ export default function EmployeeList(props) {
                                 deleteHandler={props.deleteHandler} />
                         )
                     }
-                </tbody>
-            </table>
+                </Card.Body>
+            </Card>
             <Button variant="primary" className="m-3" onClick={() => setModalShow(true)}>Add Employee</Button>
         </div>
     )
