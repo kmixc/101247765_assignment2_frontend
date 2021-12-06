@@ -1,3 +1,17 @@
+# Assignment 2 Frontend
+
+![assign2-output-11](https://user-images.githubusercontent.com/33011188/144937572-f040b95e-0610-494c-a206-e4f9be811b69.png)
+
+![assign2-output-7](https://user-images.githubusercontent.com/33011188/144937573-329788cd-4b56-4114-8a63-b8aa227d2fc6.png)
+
+![assign2-output-8](https://user-images.githubusercontent.com/33011188/144937575-72edc98f-b795-4fd2-ac97-4d2ea16f3548.png)
+
+![assign2-output-9](https://user-images.githubusercontent.com/33011188/144937576-d0ae5971-2e37-4225-b213-0f9d7808ebc0.png)
+
+![assign2-output-10](https://user-images.githubusercontent.com/33011188/144937578-fa5adee7-5c56-43dd-b9d9-3ffa4914262f.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
