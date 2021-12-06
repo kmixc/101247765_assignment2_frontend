@@ -13,11 +13,9 @@ export default function CreateEmployeeModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Header>
-                <Modal.Title className="text-center">
-                    Add Employee
-                </Modal.Title>
-            </Modal.Header>
+            <Modal.Title className="text-center">
+                Add
+            </Modal.Title>
             <Modal.Body>
                 <Form.Group className="mb-2">
                     <Form.Label>First Name:</Form.Label>

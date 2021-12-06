@@ -7,12 +7,10 @@ export default function ViewEmployeeModal(props) {
     return (
         <Modal
             {...props}>
-            <Modal.Header>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    View
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+            <Modal.Title id="contained-modal-title-vcenter">
+                View
+            </Modal.Title>
+            <Modal.Body className="text-center">
                 ID: {props.employee._id}<br />
                 First Name: {props.employee.firstName}<br />
                 Last Name: {props.employee.lastName}
